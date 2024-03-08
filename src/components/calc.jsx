@@ -6,47 +6,81 @@ const CalculadoraIMC = () => {
     const [valor1, setValor1] = useState(0);
     const [valor2, setValor2] = useState(0);
     const [nome, setNome] = useState(0);
+    let [IMC, setIMC] = useState(0);
 
     const resultado = () => {
         const somaAltura = valor1 + valor1;
         const soma = valor2 / somaAltura;
+        IMC = soma.toFixed(1)
+
+        const somaIMC = () => {
+            return {IMC}
+        }
 
         console.log(somaAltura)
         console.log(soma)
+        console.log(IMC)
 
-        if (soma <= 19) {
+        if (soma <= 18.5) {
             return (
-                <p>{nome}, está abaixo do peso correto para sua altura</p>
+                <>
+                    <h2> O seu IMC é: {IMC}</h2>
+                    <p>{nome}, está abaixo do peso correto para sua altura</p>
+                </>
             )
         };
-        if (soma <= 24) {
+        if (soma <= 24.9) {
             return (
+                <>
+                <h2> O seu IMC é: {IMC}</h2>
                 <p>{nome}, está com o pesso ideal, parabêns</p>
+                </>
             )
         };
-        if (soma <= 29) {
+        if (soma <= 29.9) {
             return (
-                <p>{nome}, está com excesso de peso, está na hora de começar a se cuidar.</p>
+                <>
+                <h2> O seu IMC é: {IMC}</h2>
+                <p>{nome}, Você está com SOBREPESO, está na hora de começar a se cuidar.</p>
+                </>
             )
         };
-        if (soma <= 34) {
+        if (soma <= 34.9) {
             return (
-                <p>{nome}, está entrando na obesidade muito cuidado.</p>
+                <>
+                <h2> O seu IMC é: {IMC}</h2>
+                <p>{nome}, está entrando na obesidade 1, muito cuidado.</p>
+                </>
             )
-        } if (soma >= 50) {
+        };
+        if (soma <= 39.9) {
             return (
-                <p>{nome}, está com Super Obesidade, procure ajuda Já.</p>
+                <>
+                <h2> O seu IMC é: {IMC}</h2>
+                <p>{nome}, está na Obesidade 2, procure ajuda Já.</p>
+                </>
+            )
+        };
+
+        if (soma >= 40) {
+            return (
+                <>
+                <h2> O seu IMC é: {IMC}</h2>
+                <p>{nome}, está na Obesidade 2, procure ajuda Já.</p>
+                </>
             )
         }
-    }
+    };
 
     return (
         <form className={styles.container}>
             <input className={styles.txtbox} type="text" placeholder="Digite seu nome:" onChange={evento => setNome(evento.target.value)} />
             <input className={styles.txtbox} type="number" placeholder="Digite sua altura em metro" onChange={evento => setValor1(parseFloat(evento.target.value))} />
             <input className={styles.txtbox} type="number" placeholder="Digite o seu peso em quilos" onChange={evento => setValor2(parseFloat(evento.target.value))} />
+            <>
 
-            {resultado()}
+                {resultado()}
+            </>
         </form>
     )
 }
