@@ -62,7 +62,7 @@ const CalculadoraIMC = () => {
             return (
                 <>
                 <h2> O seu IMC é: {IMC}</h2>
-                <p>{nome}, está na Obesidade 2, procure ajuda Já.</p>
+                <p>{nome}, está na Obesidade 2, procure ajuda, pode estar correndo risco de vida.</p>
                 </>
             )
         }
