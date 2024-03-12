@@ -33,7 +33,7 @@ const CalculadoraIMC = () => {
                 </>
             )
         }
-        if (soma <= 29.9) {
+                if (soma <= 29.9) {
             return (
                 <>
                 <h2> O seu IMC é: {IMC}</h2>
@@ -45,7 +45,7 @@ const CalculadoraIMC = () => {
             return (
                 <>
                 <h2> O seu IMC é: {IMC}</h2>
-                <p>{nome}, está entrando na obesidade 1, muito cuidado.</p>
+                <p>{nome}, está entrando na obesidade 1, esta muito acima do peso ideal</p>
                 </>
             )
         }
@@ -53,7 +53,7 @@ const CalculadoraIMC = () => {
             return (
                 <>
                 <h2> O seu IMC é: {IMC}</h2>
-                <p>{nome}, está na Obesidade 2, procure ajuda Já.</p>
+                <p>{nome}, está na Obesidade 2, você pode está corrrendo risco de vida.</p>
                 </>
             )
         }
@@ -62,7 +62,7 @@ const CalculadoraIMC = () => {
             return (
                 <>
                 <h2> O seu IMC é: {IMC}</h2>
-                <p>{nome}, está na Obesidade 2, procure ajuda, pode estar correndo risco de vida.</p>
+                <p>{nome}, está na Obesidade 3, você está corrrendo risco de vida.</p>
                 </>
             )
         }
