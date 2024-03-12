@@ -6,16 +6,12 @@ const CalculadoraIMC = () => {
     const [valor1, setValor1] = useState(0);
     const [valor2, setValor2] = useState(0);
     const [nome, setNome] = useState(0);
-    let [IMC, setIMC] = useState(0);
+    let [IMC] = useState(0);
 
     const resultado = () => {
-        const somaAltura = valor1 + valor1;
+        const somaAltura = valor1 * valor1;
         const soma = valor2 / somaAltura;
         IMC = soma.toFixed(1)
-
-        const somaIMC = () => {
-            return {IMC}
-        }
 
         console.log(somaAltura)
         console.log(soma)
@@ -28,7 +24,7 @@ const CalculadoraIMC = () => {
                     <p>{nome}, está abaixo do peso correto para sua altura</p>
                 </>
             )
-        };
+        }
         if (soma <= 24.9) {
             return (
                 <>
@@ -36,7 +32,7 @@ const CalculadoraIMC = () => {
                 <p>{nome}, está com o pesso ideal, parabêns</p>
                 </>
             )
-        };
+        }
         if (soma <= 29.9) {
             return (
                 <>
@@ -44,7 +40,7 @@ const CalculadoraIMC = () => {
                 <p>{nome}, Você está com SOBREPESO, está na hora de começar a se cuidar.</p>
                 </>
             )
-        };
+        }
         if (soma <= 34.9) {
             return (
                 <>
@@ -52,7 +48,7 @@ const CalculadoraIMC = () => {
                 <p>{nome}, está entrando na obesidade 1, muito cuidado.</p>
                 </>
             )
-        };
+        }
         if (soma <= 39.9) {
             return (
                 <>
@@ -60,13 +56,13 @@ const CalculadoraIMC = () => {
                 <p>{nome}, está na Obesidade 2, procure ajuda Já.</p>
                 </>
             )
-        };
+        }
 
         if (soma >= 40) {
             return (
                 <>
                 <h2> O seu IMC é: {IMC}</h2>
-                <p>{nome}, está na Obesidade 2, procure ajuda Já.</p>
+                <p>{nome}, está na Obesidade 2, procure ajuda, pode estar correndo risco de vida.</p>
                 </>
             )
         }
